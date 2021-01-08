@@ -62,3 +62,8 @@ i {
 .future-temperature {
   font-weight: bolder;
 }
+.coder-details {
+  text-align: center;
+  text-align: fixed;
+  font-size: 15px;
+}
