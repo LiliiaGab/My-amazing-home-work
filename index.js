@@ -35,7 +35,23 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertTocelsius);
 
 ///1 display the name of the city on the result page and the current temperature of the city.
+ function formatDate(timestamp) {
+        let newTime = timestamp;
+        let date = new Date(newTime);
+        let currentDate = date.toDateString();
+        let hours = date.getHours();
 
+        if (hours < 10) {
+            hours = `0${hours}`;
+        }
+        let mins = date.getMinutes();
+
+        if (mins < 10) {
+            mins = `0${mins}`;
+        }
+
+        return `Last updated: ${currentDate} at ${hours}:${mins}`;
+    }
 
 function showWeather (response) {
 console.log(response);
@@ -51,8 +67,6 @@ let wind = document.querySelector("#wind");
 wind.innerHTML = `Wind: ${response.data.wind.speed} m/c`;
 let feels_like = document.querySelector("#feels-like");
 feels_like.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)}°C`;
-let dateElement = document.querySelector("#dateLocation");
-dateElement = `Wind: ${response.data.wind.speed} m/c`;
 }
 
 function showTemperature(event) {
@@ -89,20 +103,7 @@ function getCurrentPosition(event) {
 let button = document.querySelector("#current");
 button.addEventListener("click", getCurrentPosition);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
