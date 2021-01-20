@@ -1,4 +1,3 @@
-// 1
 let currentTime = new Date ();
 let p2 = document.querySelector("p2");
 let p3 = document.querySelector("p3");
@@ -17,7 +16,7 @@ let currentMinutes = currentTime.getMinutes();
 p2.innerHTML=`${currentDay}, ${currentDate} ${currentMonth} ${currentYear}`;
 p3.innerHTML=`Local Time: ${currentLocaltime}:${currentMinutes}`;
 
-//3
+
 function convertTofahrenheit(event) {
     event.preventDefault();
     let temperatureLocal = document.querySelector("#temperature");
@@ -52,6 +51,8 @@ let wind = document.querySelector("#wind");
 wind.innerHTML = `Wind: ${response.data.wind.speed} m/c`;
 let feels_like = document.querySelector("#feels-like");
 feels_like.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)}°C`;
+let dateElement = document.querySelector("#date");
+dateElement = "Friday, 4 December 2020";
 }
 
 function showTemperature(event) {
