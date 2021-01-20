@@ -1,20 +1,3 @@
-let currentTime = new Date ();
-let p2 = document.querySelector("p2");
-let p3 = document.querySelector("p3");
-console.log(currentTime);
-
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-let months =["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-let currentDay = days[currentTime.getDay()];
-let currentDate = currentTime.getDate();
-let currentMonth = months[currentTime.getMonth()];
-let currentYear = currentTime.getFullYear();
-let currentLocaltime = currentTime.getHours();
-let currentMinutes = currentTime.getMinutes();
-
-p2.innerHTML=`${currentDay}, ${currentDate} ${currentMonth} ${currentYear}`;
-p3.innerHTML=`Local Time: ${currentLocaltime}:${currentMinutes}`;
 
 function convertTofahrenheit(event) {
     event.preventDefault();
@@ -36,21 +19,21 @@ celsiusLink.addEventListener("click", convertTocelsius);
 
 ///1 display the name of the city on the result page and the current temperature of the city.
  function formatDate(timestamp) {
-        let newTime = timestamp;
-        let date = new Date(newTime);
-        let currentDate = date.toDateString();
-        let hours = date.getHours();
+        let date = new Date(timestamp);
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let months =["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-        if (hours < 10) {
-            hours = `0${hours}`;
-        }
-        let mins = date.getMinutes();
+let Day = days[date.getDay()];
+let currentDate = date.getDate();
+let Month = months[date.getMonth()];
+let Year = date.getFullYear();
 
-        if (mins < 10) {
-            mins = `0${mins}`;
-        }
+let hours=date.getHours();
+if (hours < 10) { hours=`0${hours}`; } 
+let mins=date.getMinutes(); 
+if (mins < 10) { mins=`0${mins}`; } 
 
-        return `Last updated: ${currentDate} at ${hours}:${mins}`;
+        return `${Day}, ${currentDate} ${Month} ${Year}, ${hours}:${mins}`;
     }
 
 function showWeather (response) {
@@ -67,6 +50,8 @@ let wind = document.querySelector("#wind");
 wind.innerHTML = `Wind: ${response.data.wind.speed} m/c`;
 let feels_like = document.querySelector("#feels-like");
 feels_like.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)}°C`;
+let dateElement = document.querySelector("#dateCity");
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function showTemperature(event) {
