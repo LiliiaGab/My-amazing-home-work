@@ -67,3 +67,9 @@ i {
   text-align: fixed;
   font-size: 15px;
 }
+.local-city .active {
+  color: black;
+  cursor: default;
+}
+.local-city .active :hover {
+  text-decoration:none;
