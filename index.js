@@ -33,7 +33,7 @@ if (hours < 10) { hours=`0${hours}`; }
 let mins=date.getMinutes(); 
 if (mins < 10) { mins=`0${mins}`; } 
 
-        return `${Day}, ${currentDate} ${Month} ${Year}, ${hours}:${mins}`;
+        return `Last updated: ${Day}, ${currentDate} ${Month} ${Year}, ${hours}:${mins}`;
     }
 
 function showWeather (response) {
@@ -52,6 +52,9 @@ let feels_like = document.querySelector("#feels-like");
 feels_like.innerHTML = `Feels like: ${Math.round(response.data.main.feels_like)}°C`;
 let dateElement = document.querySelector("#dateCity");
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
+let iconElement = document.querySelector("#icon");
+iconElement.setAttribute("src", 
+`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function showTemperature(event) {

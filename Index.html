@@ -15,36 +15,36 @@
  
   <body>
     <div class="container">
-        <div class="current-weather">
-        <i class="fas fa-cloud fa-8x"></i>
-        </div>
-      <div class="main-information">
-      <div class="local-city">
-        <span class="temperature" id="temperature">17</span>
-        <span class="measure" id="temparature-type">
-          <a href="#" id="celsius-link">°C</a> / <a href="#" id="fahrenheit-link">°F</a>
-        </span>
-        </div>
-      <h1>
-        <span id="description">
-        Cloudy
-        </span>
-      </h1>
-      <h2 id="feels-like"> 
-        Feels like: 18°C
-      </h2>
-      </span>
-      <p1>
-        <span id="humidity">
-        Humidity: 5%
-        </span>
-        <br />
-        <span id="wind">
-        Wind: 2 m/c
-        </span>
-      </p1>
+      <div class="current-weather">
+        <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" alt="clear" id="icon"/>
       </div>
-      <div class=col-12>
+      <div class="main-information">
+        <div class="local-city">
+          <span class="temperature" id="temperature">17</span>
+          <span class="measure" id="temparature-type">
+            <a href="#" id="celsius-link">°C</a> / <a href="#" id="fahrenheit-link">°F</a>
+          </span>
+        </div>
+        <h1>
+          <span id="description">
+            Cloudy
+          </span>
+        </h1>
+        <h2 id="feels-like">
+          Feels like:
+        </h2>
+        </span>
+        <p1>
+          <span id="humidity">
+            Humidity:
+          </span>
+          <br />
+          <span id="wind">
+            Wind:
+          </span>
+        </p1>
+      </div>
+      <div class=col-6>
       <form id="seacrh-form">
         <input type="text" id="search-text-input" placeholder="Search a city" autocomplete="off" autofocus="on" />
         <input type="submit" value="Search" />
@@ -59,7 +59,7 @@
         </p4>
       </span>
       <br />
-      <p2> Last updated: <span id="dateCity"></span></p2>
+      <p2 id="dateCity"></p2>
       <br />
         <div class="card-group">
           <div class="card">
