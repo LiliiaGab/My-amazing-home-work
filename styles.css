@@ -54,7 +54,7 @@ i {
 .card-group {
   position: relative;
 }
-.card {
+.col-2 {
   font-size: 17px;
   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   text-align: center;
