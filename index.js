@@ -1,5 +1,3 @@
-
-///1 display the name of the city on the result page and the current temperature of the city.
  function formatDate(timestamp) {
         let date = new Date(timestamp);
         let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -63,11 +61,13 @@ function showForecast(response) {
     <div class="col-2">
             <img 
             src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt=""/>
-              <span class="future-temperature">
+            <div>
+            <span class="future-temperature">
             ${Math.round(forecast.main.temp_max)}°C
             </span>
             <br />  
             ${formatHours(forecast.dt*1000)}
+            </div>
           </div>
     `;    
     }
@@ -95,11 +95,9 @@ search("Auckland");
 let form = document.querySelector("#seacrh-form");
 form.addEventListener("submit", showTemperature);
 
-
 function displayForecast(response){
 console.log(response.data);
 }
-
 
 function showPosition(position) {
     let latitude = position.coords.latitude;

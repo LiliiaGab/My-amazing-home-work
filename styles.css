@@ -53,6 +53,7 @@ i {
 }
 .card-group {
   position: relative;
+  margin: 10px 0px;
 }
 .col-2 {
   font-size: 17px;
@@ -65,12 +66,13 @@ i {
 .coder-details {
   text-align: center;
   text-align: fixed;
-  font-size: 15px;
+  font-size: 13px;
 }
 .local-city .active {
-  color: black;
+  color: #0278ae;
   cursor: default;
+  text-decoration: none;
 }
 .local-city .active :hover {
-  text-decoration: none;
+  text-decoration: underline;
 }

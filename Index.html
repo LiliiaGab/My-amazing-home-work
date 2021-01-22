@@ -15,42 +15,42 @@
  
   <body>
     <div class="container">
-      <div class="current-weather">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" alt="clear" id="icon"/>
-      </div>
-      <div class="main-information">
-        <div class="local-city">
-          <span class="temperature" id="temperature">16</span>
-          <span class="measure" id="temparature-type">
-            <a href="#" id="celsius-link" class="active">°C</a> / <a href="#" id="fahrenheit-link">°F</a>
-          </span>
+        <div class="current-weather">
+          <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" alt="clear" id="icon" />
         </div>
-        <h1>
-          <span id="description">
-            Cloudy
+        <div class="main-information">
+          <div class="local-city">
+            <span class="temperature" id="temperature">16</span>
+            <span class="measure" id="temparature-type">
+              <a href="#" id="celsius-link" class="active">°C</a> / <a href="#" id="fahrenheit-link">°F</a>
+            </span>
+          </div>
+          <h1>
+            <span id="description">
+              Cloudy
+            </span>
+          </h1>
+          <h2 id="feels-like">
+            Feels like: 12°C
+          </h2>
           </span>
-        </h1>
-        <h2 id="feels-like">
-          Feels like: 12°C
-        </h2>
-        </span>
-        <p1>
-          <span id="humidity">
-            Humidity: 72%
-          </span>
-          <br />
-          <span id="wind">
-            Wind: 6.69m/c
-          </span>
-        </p1>
-      </div>
+          <p1>
+            <span id="humidity">
+              Humidity: 72%
+            </span>
+            <br />
+            <span id="wind">
+              Wind: 6.69m/c
+            </span>
+          </p1>
+        </div>
       <div class=col-6>
-      <form id="seacrh-form">
+        <form id="seacrh-form">
         <input type="searchCity" id="search-text-input" placeholder="Search a city" autocomplete="off" autofocus="on" />
-        <input type="submit" value="Search" />
+        <input type="submit" value="Search"/>
         <input type="submit" value="Current" id="current" />
-      </form>
-      </div>
+        </form>
+        </div>
       <br />
       <div class="location">
       <span class="current-city" id="current-city">
@@ -64,10 +64,9 @@
         <div class="card-group" id="forecast"></div>
     </div>
     <div class="coder-details">
+      <a href="https://github.com/LiliiaGab/My-amazing-home-work.git" target="_blank">Open-source code</a>
+      <p4>by Liliia Gabdrakhmanova</p4>
     </div>
-    <br />
-    <a href="https://github.com/LiliiaGab/My-amazing-home-work.git" target="_blank">Open-source code</a>
-    <p4>by Liliia Gabdrakhmanova</p4>
     <script src="index.js"></script>
   </body>
 </html>
