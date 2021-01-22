@@ -41,22 +41,30 @@ iconElement.setAttribute("src",
 
 
 }
+function search(city) {
+    let apiKey = "ac2523706a3a3cb29b4282c1c91e736e";
+   let units = "metric";
+   let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
+   let apiUrl=`${apiEndPoint}?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(showWeather);
+}
 
 function showTemperature(event) {
     event.preventDefault();
-    let apiKey = "ac2523706a3a3cb29b4282c1c91e736e";
-let units = "metric";
-let city = document.querySelector("#search-text-input").value;
-let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
-let apiUrl=`${apiEndPoint}?q=${city}&appid=${apiKey}&units=${units}`;
-window.axios.get(apiUrl).then(showWeather);
+    let city = document.querySelector("#search-text-input");
+    search(city.value);
 }
+
+search("Auckland");
 
 let form = document.querySelector("#seacrh-form");
 form.addEventListener("submit", showTemperature);
 
 
-//2 Add a Current Location button. 
+function displayForecast(response){
+console.log(response.data);
+}
+
 
 function showPosition(position) {
     let latitude = position.coords.latitude;
