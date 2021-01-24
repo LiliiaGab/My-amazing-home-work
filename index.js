@@ -99,6 +99,30 @@ function displayForecast(response){
 console.log(response.data);
 }
 
+function showCurrentForecast(response) {
+    
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = null;
+    let forecast = null;
+    
+    for (let index = 0; index < 6; index++) {
+        forecast = response.data.list[index];
+       forecastElement.innerHTML += `
+    <div class="col-2">
+            <img 
+            src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png" alt=""/>
+            <div>
+            <span class="future-temperature">
+            ${Math.round(forecast.main.temp_max)}°C
+            </span>
+            <br />  
+            ${formatHours(forecast.dt*1000)}
+            </div>
+          </div>
+    `;    
+    }
+}
+
 function showPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude; 
@@ -107,6 +131,9 @@ function showPosition(position) {
     let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
     let apiUrl=`${apiEndPoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
     window.axios.get(apiUrl).then(showWeather);
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(showCurrentForecast);
 }
  
 function getCurrentPosition(event) {
@@ -116,6 +143,10 @@ function getCurrentPosition(event) {
 
 let button = document.querySelector("#current");
 button.addEventListener("click", getCurrentPosition);
+
+function displayCurrentForecast(response){
+console.log(response.data);
+}
 
 function convertTofahrenheit(event) {
     event.preventDefault();
